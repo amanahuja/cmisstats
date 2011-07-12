@@ -1,0 +1,26 @@
+# File types #
+##############
+*.pyc
+*.pyo
+*.swo
+*.swp
+*.swn
+*.sh
+
+# Directories #
+###############
+logs/
+
+# Specific files #
+##################
+settings.py
+.project
+.pydevproject
+.settings
+
+# OS generated files #
+######################
+.DS_Store
+thumbs.db
+Icon
+*~
