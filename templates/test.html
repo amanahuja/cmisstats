@@ -1,5 +1,16 @@
-<h2>RepoForm</h2>
+<html>
 
-<form method="post" action="">
-    {{ form }}
-</form>
+<head>
+	<title>Repo Form</title>
+</head>
+
+<body>
+	<h2>RepoForm</h2>
+	<form method="post" action="">
+		{% csrf_token %}
+		<table>{{ form.as_table }} </table> 
+		
+		<input type="submit" value="Submit" />
+	</form>
+</body>
+</html>
