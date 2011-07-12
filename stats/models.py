@@ -1,3 +1,25 @@
 from django.db import models
+from django.forms import ModelForm
 
-# Create your models here.
+class Repo(models.Model):
+    name = models.CharField(max_length=50)
+    url = models.CharField(max_length=200)
+    username = models.CharField(max_length=20)
+    password = models.CharField(max_length=20)
+    doclib = models.CharField(max_length=250)
+
+    class Meta: 
+        permissions = (
+            ('Subscriber', 'Can view repository and contents'), 
+            ('Editor', 'Can edit repository and contents'), 
+        )
+        
+    def __unicode__(self):
+        return self.name
+    
+    def get_absolute_url(self):
+        return "/cmis/%i/" % self.id
+    
+class RepoForm(ModelForm):
+    class Meta:
+        model = Repo
