@@ -1,0 +1,13 @@
+cmisstats is a 
+A python-django application that utilizes CMIS standards to access any compliant document repository and provide some basic analysis of the data contained within.
+
+This project is assembled for demo purposes: http://www.hackerfair.com
+
+
+Some of the areas I am (slash will be) exploring here are: 
+  Development environment setup: Eclipse, PyDev, Django, django-debug-toolbar, South, ... 
+  CMIS (Content Management Interoperability Services) using cmisapi in python
+  Searching and retriving information from a cmis repository with no prior knowledge of the repository
+
+
+
