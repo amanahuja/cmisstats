@@ -7,18 +7,12 @@ class Repo(models.Model):
     username = models.CharField(max_length=20)
     password = models.CharField(max_length=20)
     doclib = models.CharField(max_length=250)
-
-    class Meta: 
-        permissions = (
-            ('Subscriber', 'Can view repository and contents'), 
-            ('Editor', 'Can edit repository and contents'), 
-        )
         
     def __unicode__(self):
         return self.name
     
     def get_absolute_url(self):
-        return "/cmis/%i/" % self.id
+        return "/repo/%i/" % self.id
     
 class RepoForm(ModelForm):
     class Meta:
