@@ -1,0 +1,12 @@
+
+<title>Repository information</title>
+
+<h1>{{ repo_name }}</h1>
+<h2>@ {{ repo_url }}</h2>
+<h2>Properties:</h2>
+<ul>{% for key,value in properties.items %}
+	<li>{{ key }} -- {{ value }}</li>
+{% endfor %}</ul>
+<br />
+
+
