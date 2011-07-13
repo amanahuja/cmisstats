@@ -1,0 +1,29 @@
+<html>
+
+<head>
+	<title>Repo List</title>
+</head>
+
+<body>
+	<h2>Select a Repository</h2>
+	
+	<h4>Choose a registered CMIS Repository from the list:</h2>
+
+	<ul>{% for repo in repo_list %}
+	<li>{{ repo.name }}
+		<ul>
+			<li>Repo URL: <a href="{{ repo.url }}">{{ repo.url }}</a></li>
+	        	<li>Repo Login name: {{repo.username }}</li>
+			<li><strong><a href="{{ repo.get_absolute_url }}">Explore this repo.</a></strong></li>
+		</ul>
+	</li>
+	{% endfor %}
+	</ul>
+
+	<h4>Or add another:</h4> 
+	<ul>
+	<li><a href="#">Add Repo</a></li>
+	</ul> 
+	
+</body>
+</html>
