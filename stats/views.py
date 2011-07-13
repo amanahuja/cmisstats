@@ -1,6 +1,7 @@
 from stats.models import Repo, RepoForm
 from django.template import RequestContext
 from django.shortcuts import render_to_response
+from django.http import HttpResponse
 
 def list (request):
     repos = Repo.objects.all()
@@ -12,7 +13,8 @@ def addRepo (request):
     if request.method == 'POST': 
         form = RepoForm(request.POST)
         if form.is_valid():
-            form.save
+            form.save()
+            return HttpResponse('Added repository'.format(form.cleaned_data.items()))
             
     else:  
         form = RepoForm()
