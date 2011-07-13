@@ -11,5 +11,7 @@ urlpatterns = patterns('',
     url(r'^admin/doc/', include('django.contrib.admindocs.urls')),
     url(r'^admin/', include(admin.site.urls)),
     
-    url(r'^$', 'cmisstats.stats.views.home', name='home'),
+    url(r'^$', 'cmisstats.stats.views.list', name='list'),
+    #url(r'^cmis/', include('cmisstats.cmis.urls')),
+    url(r'^stats/', include('cmisstats.stats.urls')),
 )

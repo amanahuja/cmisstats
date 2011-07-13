@@ -12,7 +12,7 @@ class Repo(models.Model):
         return self.name
     
     def get_absolute_url(self):
-        return "/repo/%i/" % self.id
+        return "/stats/%i/" % self.id
     
 class RepoForm(ModelForm):
     class Meta:
