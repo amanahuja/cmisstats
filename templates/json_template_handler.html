@@ -1,0 +1,17 @@
+
+<html>
+<body>
+<ul>
+	{% for repo in results %}
+	<li>{{ repo.name }}
+	<ul>
+		<li>Repo URL: <a href="{{ repo.url }}">{{ repo.url }}</a></li>
+		<li>Repo Login name: {{repo.username }}</li>
+		<li><strong><a href="{{ repo.get_absolute_url }}">Explore
+		this repo.</a></strong></li>
+	</ul>
+	</li>
+	{% endfor %}
+</ul>
+</body>
+</html>
