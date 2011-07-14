@@ -6,4 +6,5 @@ urlpatterns = patterns('stats.views',
     url(r'^add', 'addRepo'),
     url(r'^(?P<repo_id>\d+)/$', 'info'),
     url(r'^(?P<repo_id>\d+)/browse$', 'browse'),
+    url(r'^ajaxdirtree', 'ajax_directory_tree'),
 )
