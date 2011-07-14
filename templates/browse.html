@@ -1,7 +1,41 @@
+<html>
 
-<title> Browse repository </title>
-<h1>{{ rootfolder }}</h1>
+<head>
+	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+	
+	<script type="text/javascript">
+		$.ajaxSetup ({
+			cache: false
+		});
+		var ajax_load = "<img src='http://nettuts.s3.amazonaws.com/412_ajaxCalls/DEMO/img/load.gif' alt='loading...' />";
+	
+		//	load() functions
+		$( document ).ready( function() {
+			var loadUrl = "/stats/ajaxdirtree";
+			$( '#load_basic' ).click( function() {
+				$("#result").html(ajax_load).load(loadUrl);	
+			});
+		});
+	
+		$( document ).ajaxStart( function() {
+			$( '#spinner' ).show();
+		}).ajaxStop( function() {
+			$( '#spinner' ).hide();
+		});
+	</script>
+	
+	<title> Browse repository </title>
+</head>
 
-<p>
-{{ directory }}
-</p> 
+<body>
+	<h1>{{ rootfolder }}</h1>
+	
+	<p>
+		{{ directory }}
+	</p>
+	
+	<input type="submit" value="Browse" id="load_basic" /> 
+	<div id="result"  class="functions"></div>
+
+</body>
+</html>
