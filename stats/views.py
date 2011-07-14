@@ -3,7 +3,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404 
 from django.http import HttpResponse
 
-from stats.helpers import CMISRepoConnector
+from stats.helpers import CMISRepoConnector, parseFolder
 
 def list (request):
     repos = Repo.objects.all()
@@ -42,3 +42,21 @@ def info(request, repo_id):
         'repo_name':cmisserver.name,
         'repo_url':cmisserver.url,
         }, context_instance=RequestContext(request))
+
+def browse(request, repo_id):
+    
+    '''
+    
+    ''' 
+    # todo: We've already connected here and should use a persisted connection.
+    cmisserver = get_object_or_404(Repo, pk=repo_id)
+    cmisrepo = CMISRepoConnector(repo_id)
+    
+    rootfolder = cmisrepo.getRootFolder()
+    directory = [] 
+    directory.append(parseFolder(rootfolder))
+        
+    return render_to_response('browse.html', {
+            'rootfolder': rootfolder.name,
+            'directory': directory,
+            })
