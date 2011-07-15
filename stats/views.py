@@ -44,9 +44,9 @@ def info(request, repo_id):
         }, context_instance=RequestContext(request))
 
 def browse(request, repo_id):
-    
     '''
-    
+    This view will allow the user to view the directory tree
+    and document contents of the repository. 
     ''' 
     # todo: We've already connected here and should use a persisted connection.
     '''
