@@ -3,7 +3,8 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404 
 from django.http import HttpResponse
 
-from stats.helpers import CMISRepoConnector, parseFolder
+from stats.helpers import CMISRepoConnector
+from stats.utils import parseFolder
 
 def list (request):
     repos = Repo.objects.all()
