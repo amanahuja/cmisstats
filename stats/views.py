@@ -2,6 +2,7 @@ from stats.models import Repo, RepoForm
 from django.template import RequestContext
 from django.shortcuts import render_to_response, get_object_or_404 
 from django.http import HttpResponse
+import djangotasks
 
 from stats.helpers import CMISRepoConnector
 from stats.utils import parseFolder
@@ -58,7 +59,12 @@ def browse(request, repo_id):
     directory = [] 
     directory.append(parseFolder(rootfolder))
     '''
-     
+    #register task
+    djangotasks.register_task(Repo.update_directory, "Builds a directory tree for the repository")
+    #get task
+    task = djangotasks.task_for_object(Repo.update_directory)
+    djangotasks.run_task(task)
+    
     return render_to_response('browse.html', {
             'rootfolder': "rootfolder.name",
             'directory': "directory",
