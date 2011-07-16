@@ -72,9 +72,14 @@ def browse(request, repo_id):
             'directory': cmisserver.dirtree,
             })
 
-def ajax_directory_tree( request ):
+def ajax_directory_tree( request, repo_id ):
+
     if request.is_ajax():
-        results = Repo.objects.all()
+        cmisserver = get_object_or_404(Repo, pk=repo_id)
+        if cmisserver.dirtree: 
+            results = cmisserver.dirtree
+        else:
+            results = 'no directory tree available'
     else:
         return HttpResponse('not an AJAX request.')
         
