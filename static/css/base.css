@@ -1,0 +1,199 @@
+
+/*  HTML5 Boilerplate  */
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+blockquote, q { quotes: none; }
+blockquote:before, blockquote:after,
+q:before, q:after { content: ''; content: none; }
+ins { background-color: #ff9; color: #000; text-decoration: none; }
+mark { background-color: #ff9; color: #000; font-style: italic; font-weight: bold; }
+del { text-decoration: line-through; }
+abbr[title], dfn[title] { border-bottom: 1px dotted; cursor: help; }
+table { border-collapse: collapse; border-spacing: 0; }
+hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+input, select { vertical-align: middle; }
+
+body { font:13px/1.231 sans-serif; *font-size:small; } 
+select, input, textarea, button { font:99% sans-serif; }
+pre, code, kbd, samp { font-family: monospace, sans-serif; }
+
+html { overflow-y: scroll; }
+a:hover, a:active { outline: none; }
+ul, ol { margin-left: 2em; }
+ol { list-style-type: decimal; }
+nav ul, nav li { margin: 0; list-style:none; list-style-image: none; }
+small { font-size: 85%; }
+strong, th { font-weight: bold; }
+td { vertical-align: top; }
+
+sub, sup { font-size: 75%; line-height: 0; position: relative; }
+sup { top: -0.5em; }
+sub { bottom: -0.25em; }
+
+pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; padding: 15px; }
+textarea { overflow: auto; }
+.ie6 legend, .ie7 legend { margin-left: -7px; } 
+input[type="radio"] { vertical-align: text-bottom; }
+input[type="checkbox"] { vertical-align: bottom; }
+.ie7 input[type="checkbox"] { vertical-align: baseline; }
+.ie6 input { vertical-align: text-bottom; }
+label, input[type="button"], input[type="submit"], input[type="image"], button { cursor: pointer; }
+button, input, select, textarea { margin: 0; }
+input:valid, textarea:valid   {  }
+input:invalid, textarea:invalid { border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red; }
+.no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
+
+::-moz-selection{ background: #FF5E99; color:#fff; text-shadow: none; }
+::selection { background:#FF5E99; color:#fff; text-shadow: none; }
+a:link { -webkit-tap-highlight-color: #FF5E99; }
+
+button {  width: auto; overflow: visible; }
+.ie7 img { -ms-interpolation-mode: bicubic; }
+
+body, select, input, textarea {  color: #444; }
+h1, h2, h3, h4, h5, h6 { font-weight: bold; }
+a, a:active, a:visited { color: #607890; }
+a:hover { color: #036; }
+
+/* via YUI Fonts CSS foundation*/
+h1 {font-size:138.5%;}
+h2 {font-size:123.1%;}
+h3 {font-size:108%;}
+h1,h2,h3 {margin:1em 0;}
+
+/* CSS Shortcuts */
+.ir { display: block; text-indent: -999em; overflow: hidden; background-repeat: no-repeat; text-align: left; direction: ltr; }
+.hidden { display: none; visibility: hidden; }
+.visuallyhidden { border: 0; clip: rect(0 0 0 0); height: 1px; margin: -1px; overflow: hidden; padding: 0; position: absolute; width: 1px; }
+.visuallyhidden.focusable:active,
+.visuallyhidden.focusable:focus { clip: auto; height: auto; margin: 0; overflow: visible; position: static; width: auto; }
+.invisible { visibility: hidden; }
+.clearfix:before, .clearfix:after { content: "\0020"; display: block; height: 0; overflow: hidden; }
+.clearfix:after { clear: both; }
+.clearfix { zoom: 1; }
+
+/* ----- end boilerplate ------ */ 
+
+body {
+  //max-width:960px;
+  width:90%;
+  margin: 0 auto;
+  font: 1.0 georgia,"times new roman",times,serif;
+}
+
+section, aside {display:block;}
+aside {display:table-cell; width:280px; padding:0 2px;} 
+#main {display:table-cell; width:800px; margin-left:5px; padding:0 2px;}
+#content{display:table; }
+#search-pane {width: 370px;}
+
+header {  text-align:center;  margin-top: 50px; }
+header .left {display: table-cell; width: 300px; vertical-align: middle;}
+header .middle {display: table-cell; width: 600px;}
+#navbar {border-bottom:solid #444 5px; padding-bottom:3px;}
+#loginbar { float:right; }
+
+.spacer { height: 50px; }
+
+/* ---- login/logout pages --*/
+#login-form { background: #FFF; border: #669 thin solid; width: 350px; padding: 3px;} 
+form div { background: #AAF; padding:2px; } 
+.error {color: #F00; font-weight:bold;}
+
+/* ---- search form and search page --- */
+
+.fldSet { 
+	 
+	}
+
+form ol { list-style:none; }
+		
+form label {
+	float:left;
+	text-align:right;	
+	}
+
+form input, form textarea { border:1px solid #999999;}
+
+form input:focus,
+form textarea:focus {
+	border:1px solid #666;
+	background:#e3f1f1;
+	}
+
+#frmSearch li {
+	background:#e1e1e1; 
+	padding:2px;
+	margin-bottom:1px;
+	}
+
+#frmSearch label {
+	width:60px;
+	margin-right:6px;
+	color:#0066CC;	
+	line-height:23px; /* This will make the labels vertically centered with the inputs */
+	}
+		
+#frmSearch input,
+#frmSearch textarea {
+		padding:2px;
+		width:200px;
+		}
+
+ul#daterange {
+	list-style: none outside none;
+	margin: 6px 7px;
+	}
+ 	#daterange li { display: inline;}
+ 	#daterange input { width: 63px; } 
+ 	#daterange label {float: none; margin-right:16px;} 
+ 	 
+ .btnMDS {
+	background:#003366 no-repeat 8px 50%;
+	border:none;
+	padding:2px 2px 2px 2px;
+	/* border-radius:15%; /* Don't expect this to work on IE6 or 7 */
+	-moz-border-radius:15%;
+	-webkit-border-radius:15%;			
+	color:#fff;
+	margin-left:10px; /* Total width of the labels + their right margin */
+	cursor:pointer;
+	float:none;
+	}
+			
+ .btnFTS {
+	background:#003366 no-repeat 8px 50%;
+	border:none;
+	padding:2px 2px 2px 2px;
+	/* border-radius:15%; /* Don't expect this to work on IE6 or 7 */
+	-moz-border-radius:15%;
+	-webkit-border-radius:15%;			
+	color:#fff;
+	cursor:pointer;
+	}
+
+#srchrstable>tbody>tr { cursor: pointer; }
+
+/* ---- Doc Details Page --- */
+section#docdetails {display:table-cell; width:650px; margin-left:5px; padding:0 2px;}
+aside#docdownload {display:table-cell; width:400px; padding:0 2px;} 
