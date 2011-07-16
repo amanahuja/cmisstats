@@ -16,7 +16,7 @@
 
 	// load() functions
 	$( document ).ready( function() {
-		var loadUrl = "/stats/ajaxdirtree";
+		var loadUrl = "update";
 		$( '#load_basic' ).click( function() {
 			$("#result").html(ajax_load).load(loadUrl);	
 		});
@@ -29,6 +29,6 @@
 
 <p>{{ directory }}</p>
 
-<input type="submit" value="Browse" id="load_basic" /> 
+<input type="submit" value="Update" id="load_basic" /> 
 <div id="result"  class="functions"></div>
 {% endblock %} 
