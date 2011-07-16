@@ -1,36 +1,34 @@
-<html>
+{% extends "base.html" %}
 
-<head>
-	<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	
-	<script type="text/javascript">
-		//Do not cache this Ajax data
-		$.ajaxSetup ({
-			cache: false
+{% block title %}Browse repository {% endblock %}
+
+{% block css-includes%} 
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+
+<script type="text/javascript">
+	//Do not cache this Ajax data
+	$.ajaxSetup ({
+		cache: false
+	});
+
+	// Spinning graphic while the data loads
+	var ajax_load = "<img src='http://nettuts.s3.amazonaws.com/412_ajaxCalls/DEMO/img/load.gif' alt='loading...' />";
+
+	// load() functions
+	$( document ).ready( function() {
+		var loadUrl = "/stats/ajaxdirtree";
+		$( '#load_basic' ).click( function() {
+			$("#result").html(ajax_load).load(loadUrl);	
 		});
+	});
+</script>
+{% endblock %}
 
-		// Spinning graphic while the data loads
-		var ajax_load = "<img src='http://nettuts.s3.amazonaws.com/412_ajaxCalls/DEMO/img/load.gif' alt='loading...' />";
-	
-		// load() functions
-		$( document ).ready( function() {
-			var loadUrl = "/stats/ajaxdirtree";
-			$( '#load_basic' ).click( function() {
-				$("#result").html(ajax_load).load(loadUrl);	
-			});
-		});
-	</script>
-	
-	<title> Browse repository </title>
-</head>
+{% block content %}
+<h1>{{ rootfolder }}</h1>
 
-<body>
-	<h1>{{ rootfolder }}</h1>
-	
-	<p>{{ directory }}</p>
-	
-	<input type="submit" value="Browse" id="load_basic" /> 
-	<div id="result"  class="functions"></div>
+<p>{{ directory }}</p>
 
-</body>
-</html>
+<input type="submit" value="Browse" id="load_basic" /> 
+<div id="result"  class="functions"></div>
+{% endblock %} 
