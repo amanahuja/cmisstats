@@ -50,9 +50,11 @@ def browse(request, repo_id):
     This view will allow the user to view the directory tree
     and document contents of the repository. 
     ''' 
-    # todo: We've already connected here and should use a persisted connection.
-    '''
+    
     cmisserver = get_object_or_404(Repo, pk=repo_id)
+    
+    '''
+    # todo: We've already connected here and should use a persisted connection.
     cmisrepo = CMISRepoConnector(repo_id)
     
     rootfolder = cmisrepo.getRootFolder()
@@ -60,14 +62,14 @@ def browse(request, repo_id):
     directory.append(parseFolder(rootfolder))
     '''
     #register task
-    djangotasks.register_task(Repo.update_directory, "Builds a directory tree for the repository")
+    #djangotasks.register_task(Repo.update_directory, "Builds a directory tree for the repository")
     #get task
-    task = djangotasks.task_for_object(Repo.update_directory)
-    djangotasks.run_task(task)
+    #task = djangotasks.task_for_object(Repo.update_directory)
+    #djangotasks.run_task(task)
     
     return render_to_response('browse.html', {
-            'rootfolder': "rootfolder.name",
-            'directory': "directory",
+            'rootfolder': cmisserver.name,
+            'directory': cmisserver.dirtree,
             })
 
 def ajax_directory_tree( request ):
