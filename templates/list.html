@@ -1,29 +1,25 @@
-<html>
+{% extends "base.html" %}
 
-<head>
-	<title>Repo List</title>
-</head>
+{% block title %}Repo List{% endblock %}
 
-<body>
-	<h2>Select a Repository</h2>
-	
-	<h4>Choose a registered CMIS Repository from the list:</h2>
+{% block content %}
+<h2>Select a Repository</h2>
 
-	<ul>{% for repo in repo_list %}
-	<li>{{ repo.name }}
-		<ul>
-			<li>Repo URL: <a href="{{ repo.url }}">{{ repo.url }}</a></li>
-	        	<li>Repo Login name: {{repo.username }}</li>
-			<li><strong><a href="{{ repo.get_absolute_url }}">Explore this repo.</a></strong></li>
-		</ul>
-	</li>
-	{% endfor %}
-	</ul>
+<h3>Choose a registered CMIS Repository from the list:</h3>
 
-	<h4>Or add another:</h4> 
+<ul>{% for repo in repo_list %}
+<li>{{ repo.name }}
 	<ul>
-	<li><a href="#">Add Repo</a></li>
-	</ul> 
-	
-</body>
-</html>
+		<li>Repo URL: <a href="{{ repo.url }}">{{ repo.url }}</a></li>
+        	<li>Repo Login name: {{repo.username }}</li>
+		<li><strong><a href="{{ repo.get_absolute_url }}">Explore this repo.</a></strong></li>
+	</ul>
+</li>
+{% endfor %}
+</ul>
+
+<h3>Or add another:</h3> 
+<ul>
+<li><a href="#">Add Repo</a></li>
+</ul> 
+{% endblock %} 
