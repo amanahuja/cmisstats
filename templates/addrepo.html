@@ -1,16 +1,13 @@
-<html>
+{% extends "base.html" %}
 
-<head>
-	<title>Repo Form</title>
-</head>
+{% block title %}Add Repo Form{% endblock %}
 
-<body>
-	<h2>RepoForm</h2>
-	<form method="post" action="">
-		{% csrf_token %}
-		<table>{{ form.as_table }} </table> 
-		
-		<input type="submit" value="Submit" />
-	</form>
-</body>
-</html>
+{% block content %}
+<h2>RepoForm</h2>
+<form method="post" action="">
+	{% csrf_token %}
+	<table>{{ form.as_table }} </table> 
+	
+	<input type="submit" value="Submit" />
+</form>
+{% endblock %} 
